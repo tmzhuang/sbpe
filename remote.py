@@ -182,6 +182,7 @@ def initHooks():
 @ffi.def_extern()
 def kickstart():
     global refs, util
+    import os
 
     SYMFILE = os.environ['SBPE_SYMFILE']
 

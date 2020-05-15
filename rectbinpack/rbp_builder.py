@@ -16,4 +16,4 @@ ffibuilder.set_source(
     '_rbp', readfile('rbp.cpp'), source_extension='.cpp', sources=SRCLIST)
 
 if __name__ == '__main__':
-    ffibuilder.compile()
+    ffibuilder.compile(verbose=True)

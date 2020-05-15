@@ -225,11 +225,14 @@ def runLoader(exepath=''):
     logging.info('game closed: code {}'.format(gpop.returncode))
 
     # dump stdout
-    stdo = gpop.communicate()[0].decode()
+    stdout, stderr = gpop.communicate()
 
-    if len(stdo) > 0:
+    if stdout:
         logging.info('stdout:')
-        print(stdo)
+        logging.info(stdout)
+    if stderr:
+        logging.info('stderr:')
+        logging.info(stderr)
 
     return True
 

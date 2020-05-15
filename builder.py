@@ -10,7 +10,7 @@ EXTRA_SRC = [LIB_BASE + 'subhook/subhook.c']
 pltsysname = {'Windows': 'win32', 'Darwin': 'osx', 'Linux': 'elf'}
 pltsrc = pltsysname[platform.system()]
 pltsrc = LIB_BASE + 'plthook/plthook_{}.c'.format(pltsrc)
-# EXTRA_SRC.append(pltsrc)  # disabled until it is actually useful
+EXTRA_SRC.append(pltsrc)  # disabled until it is actually useful
 
 LIBDIRS = []
 if platform.system() == 'Windows':
@@ -39,7 +39,7 @@ def build():
         libraries=['SDL2'], library_dirs=LIBDIRS,
         define_macros=[('SUBHOOK_STATIC', None)])
 
-    ffibuilder.compile(tmpdir='build', target='remote.bin')
+    ffibuilder.compile(tmpdir='build', target='remote.bin', verbose=True)
 
 
 if __name__ == '__main__':

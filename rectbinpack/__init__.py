@@ -16,7 +16,7 @@ def MaxRects(width, height, items, flip=False):
             i += 1
 
         out = ffi.new('struct Rect**')
-        outn = lib.MaxRects_insert(sz, n, lib.MaxRectsBestShortSideFit, out)
+        outn = lib.MaxRects_insert(sz, n, out)
         rects = ffi.unpack(out[0], outn)
 
         for i in range(outn):

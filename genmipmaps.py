@@ -5,6 +5,7 @@ import io
 import logging
 import math
 import os
+import os.path
 import random
 import time
 
@@ -63,6 +64,7 @@ def readDesc(src):
 def loadSheets(sheetnames):
     sheets = {}
     for name in sheetnames:
+        name = os.path.basename(name)
         b = io.BytesIO(readFile(name))
         sheets[int(name.split('.')[1])] = Image.open(b)
     return sheets
@@ -184,6 +186,7 @@ def doPack(params):
 
     # phase 1 - sprites
 
+    print(sheetnames)
     sheets = loadSheets(sheetnames)
     sheetsize = sheets[0].size
 

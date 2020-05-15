@@ -12,3 +12,10 @@ config.ini
 plugins/test.py
 symbols.json
 out/
+.python-version
+tags
+*.o
+*.tar.gz
+log.txt
+DrMemory-Linux-2.3.0-1
+*.so
